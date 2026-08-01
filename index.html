@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Free Fire Rewards</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -14,113 +14,158 @@
             font-family: 'Plus Jakarta Sans', sans-serif;
             background: radial-gradient(circle at center, #1b1328 0%, #09070f 100%);
         }
+        
+        /* Floating Badge Animation */
+        @keyframes floatingBadge {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-4px); }
+        }
+        .float-badge {
+            animation: floatingBadge 2s ease-in-out infinite;
+        }
+
+        /* Continuous Button Shimmer Light Animation */
+        @keyframes buttonShimmer {
+            0% { transform: translateX(-150%) skewX(-20deg); }
+            50%, 100% { transform: translateX(200%) skewX(-20deg); }
+        }
+        .button-shimmer {
+            animation: buttonShimmer 2.5s infinite;
+        }
+
+        /* PNG Shiny Sweep Effect */
+        @keyframes pngShiny {
+            0% { transform: translateX(-180%) translateY(-180%) rotate(45deg); }
+            40%, 100% { transform: translateX(180%) translateY(180%) rotate(45deg); }
+        }
+        .png-shiny-glow {
+            animation: pngShiny 3s ease-in-out infinite;
+        }
     </style>
 </head>
-<body class="relative flex flex-col items-center justify-start min-h-screen text-white px-4 pt-6 md:pt-10 pb-12 overflow-x-hidden">
+<body class="relative flex flex-col items-center justify-between h-screen w-screen text-white px-3 pt-3 pb-6 overflow-hidden">
 
     <!-- Ambient Purple Background Glow Effects -->
-    <div class="absolute top-10 left-1/2 -translate-x-1/2 w-[500px] h-[500px] bg-purple-600/15 rounded-full blur-[140px] pointer-events-none z-0"></div>
-    <div class="absolute bottom-10 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-indigo-600/15 rounded-full blur-[160px] pointer-events-none z-0"></div>
+    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[450px] h-[450px] bg-purple-600/15 rounded-full blur-[140px] pointer-events-none z-0"></div>
+    <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-[550px] h-[280px] bg-indigo-600/15 rounded-full blur-[160px] pointer-events-none z-0"></div>
 
-    <!-- Main Wrapper Content -->
-    <div class="relative z-10 w-full max-w-3xl flex flex-col items-center">
+    <!-- Main Single Screen Container -->
+    <div class="relative z-10 w-full max-w-lg md:max-w-xl h-full flex flex-col justify-start items-center space-y-3.5 my-auto">
 
         <!-- Top Heading Section -->
-        <div class="text-center mb-6 w-full">
-            <h1 class="text-3xl md:text-5xl font-extrabold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-500 to-amber-500 drop-shadow-[0_0_15px_rgba(168,85,247,0.3)] uppercase">
+        <div class="text-center w-full">
+            <h1 class="text-2xl md:text-3xl font-extrabold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-500 to-amber-500 drop-shadow-[0_0_15px_rgba(168,85,247,0.3)] uppercase">
                 Free Fire REWARDS
             </h1>
-            <p class="text-gray-400 text-xs md:text-sm font-semibold tracking-widest mt-2 uppercase flex items-center justify-center gap-2">
+            <p class="text-gray-400 text-[10px] md:text-xs font-semibold tracking-widest mt-0.5 uppercase flex items-center justify-center gap-1.5">
                 <span class="inline-block w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
                 Watch The Full Video
             </p>
         </div>
 
         <!-- Main Video Container -->
-        <div class="relative w-full aspect-[16/9] rounded-2xl md:rounded-3xl overflow-hidden shadow-[0_25px_60px_-15px_rgba(0,0,0,0.9)] border border-purple-500/20 bg-[#120e1a] p-[3px]">
+        <div class="relative w-full aspect-[16/9] max-h-[26vh] sm:max-h-[28vh] rounded-2xl overflow-hidden shadow-[0_15px_40px_-10px_rgba(0,0,0,0.9)] border border-purple-500/20 bg-[#120e1a] p-[2px]">
             
             <!-- Soft Purple Back-Glow -->
             <div class="absolute inset-0 bg-gradient-to-tr from-purple-600/20 via-transparent to-pink-500/10 pointer-events-none z-0"></div>
 
             <!-- The Video Player -->
-            <div class="relative w-full h-full z-10 rounded-[13px] md:rounded-[21px] overflow-hidden bg-black shadow-inner">
-                <video class="w-full h-full object-cover" controls poster="/hq720 (6).jpg">
+            <div class="relative w-full h-full z-10 rounded-[14px] overflow-hidden bg-black shadow-inner">
+                <video class="w-full h-full object-cover" controls poster="https://raw.githubusercontent.com/cronygaming501-hash/Crony-Proxy/main/Screenshot%202026-07-28%20182305.png">
                     <source src="https://raw.githubusercontent.com/cronygaming501-hash/Crony-Proxy/main/Proxy_Server_GGM_Portal_%F0%9F%92%8E%F0%9F%8E%81(1080p).mp4" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
             </div>
         </div>
 
+        <!-- Gap after Video -->
+        <div class="w-full h-1"></div>
+
         <!-- Live Stats Section -->
-        <div class="w-full mt-6 grid grid-cols-1 sm:grid-cols-2 gap-4 px-1">
+        <div class="w-full grid grid-cols-2 gap-2.5">
             
             <!-- Stat 1: Members Online -->
-            <div class="bg-[#181124]/80 border border-purple-500/30 rounded-xl py-3.5 px-5 flex items-center justify-between shadow-[0_0_20px_rgba(168,85,247,0.1)] backdrop-blur-md">
-                <span class="text-xs md:text-sm font-bold uppercase tracking-wider text-emerald-400 flex items-center gap-2">
-                    <span class="inline-block w-2.5 h-2.5 rounded-full bg-emerald-500 animate-ping"></span>
+            <div class="bg-[#181124]/90 border border-emerald-500/40 rounded-xl py-2 px-3 flex flex-col sm:flex-row items-center justify-between shadow-[0_0_20px_rgba(16,185,129,0.15)] backdrop-blur-md min-w-0">
+                <span class="text-[10px] sm:text-xs font-extrabold uppercase tracking-wider text-emerald-400 flex items-center gap-1.5 whitespace-nowrap">
+                    <span class="inline-block w-2 h-2 rounded-full bg-emerald-500 animate-ping"></span>
                     Live Members
                 </span>
-                <span id="live-members" class="text-lg md:text-xl font-extrabold text-white transition-all duration-300">
+                <span id="live-members" class="text-sm sm:text-base font-black text-white transition-all duration-300 truncate mt-0.5 sm:mt-0">
                     48,215
                 </span>
             </div>
 
             <!-- Stat 2: Total Downloads -->
-            <div class="bg-[#181124]/80 border border-purple-500/30 rounded-xl py-3.5 px-5 flex items-center justify-between shadow-[0_0_20px_rgba(168,85,247,0.1)] backdrop-blur-md">
-                <span class="text-xs md:text-sm font-bold uppercase tracking-wider text-purple-300 flex items-center gap-2">
-                    <i class="fas fa-cloud-download-alt text-xs text-purple-400"></i> Downloads
+            <div class="bg-[#181124]/80 border border-purple-500/30 rounded-xl py-2 px-3 flex flex-col sm:flex-row items-center justify-between shadow-[0_0_15px_rgba(168,85,247,0.1)] backdrop-blur-md min-w-0">
+                <span class="text-[10px] sm:text-xs font-bold uppercase tracking-wider text-purple-300 flex items-center gap-1.5 whitespace-nowrap">
+                    <i class="fas fa-cloud-download-alt text-[10px] sm:text-xs text-purple-400"></i> Downloads
                 </span>
-                <span id="total-downloads" class="text-lg md:text-xl font-extrabold text-white transition-all duration-300">
+                <span id="total-downloads" class="text-sm sm:text-base font-extrabold text-white transition-all duration-300 truncate mt-0.5 sm:mt-0">
                     425,910+
                 </span>
             </div>
 
         </div>
 
-        <!-- Bottom Premium Card (BADA & PROMINENT LOGO + BUTTON SAFELY INSIDE BOX) -->
-        <div class="relative w-full rounded-2xl md:rounded-3xl overflow-hidden shadow-[0_25px_60px_-15px_rgba(0,0,0,0.9)] border border-purple-500/25 bg-[#181124]/90 p-6 md:p-8 mt-8 flex flex-col items-center justify-center text-center backdrop-blur-md">
+        <!-- Gap after Live Members -->
+        <div class="w-full h-1.5"></div>
+
+        <!-- Bottom Premium Card (With PNG Shining & Button Shining Effects) -->
+        <div class="relative w-full aspect-[16/9] max-w-lg md:max-w-xl rounded-2xl overflow-hidden shadow-[0_20px_50px_-10px_rgba(0,0,0,0.9)] border border-purple-500/25 bg-[#181124]/90 p-3.5 md:p-4 flex flex-col items-center justify-between backdrop-blur-md mb-2">
             
             <!-- Soft Ambient Purple Back-Glow -->
             <div class="absolute inset-0 bg-gradient-to-tr from-purple-600/10 via-transparent to-pink-500/10 pointer-events-none z-0"></div>
 
-            <div class="relative z-10 flex flex-col items-center justify-center w-full max-w-md space-y-4">
+            <div class="relative z-10 flex flex-col items-center justify-between w-full h-full">
                 
-                <!-- Bada PNG Logo -->
-                <div class="relative aspect-square w-16 md:w-20 rounded-2xl overflow-hidden flex-shrink-0 bg-gradient-to-b from-purple-500 to-indigo-900 p-[1.5px] shadow-[0_0_20px_rgba(168,85,247,0.3)]">
-                    <div class="w-full h-full bg-[#1c122c] rounded-[14px] flex items-center justify-center overflow-hidden">
-                        <img src="https://raw.githubusercontent.com/cronygaming501-hash/Crony-Proxy/main/grok_image_1784968853364.jpg" alt="Proxy Logo" class="w-full h-full object-cover">
-                    </div>
-                </div>
-
-                <!-- Text & Rating -->
-                <div class="flex flex-col items-center">
-                    <!-- HOT & PREMIUM Tag -->
-                    <span class="text-xs uppercase font-black tracking-wider text-white bg-gradient-to-r from-red-600 to-orange-500 px-3 py-1 rounded-md shadow-[0_0_10px_rgba(239,68,68,0.5)] flex items-center gap-1 border border-orange-400/30">
-                        <i class="fas fa-fire text-xs animate-bounce"></i> HOT & PREMIUM
-                    </span>
-
-                    <h3 class="text-xl md:text-2xl font-extrabold text-gray-100 tracking-wide mt-2">
-                        Free Fire Premium Proxy &#128175;
-                    </h3>
+                <!-- Row for PNG Logo and Details -->
+                <div class="flex items-center justify-start gap-4 w-full my-auto">
                     
-                    <!-- 5 Star Rating -->
-                    <div class="flex items-center gap-1 mt-1 text-amber-400 text-sm">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <span class="text-gray-400 font-medium ml-1.5 text-xs">(5.0 Secure Client)</span>
+                    <!-- Left Side: 1:1 PNG Logo Container (WITH SHINING EFFECT) -->
+                    <div class="relative aspect-square w-14 md:w-16 rounded-xl overflow-hidden flex-shrink-0 bg-gradient-to-b from-purple-500 to-indigo-900 p-[1.5px] shadow-[0_0_15px_rgba(168,85,247,0.4)]">
+                        <div class="relative w-full h-full bg-[#1c122c] rounded-[10px] flex items-center justify-center overflow-hidden">
+                            <img src="https://raw.githubusercontent.com/cronygaming501-hash/Crony-Proxy/main/grok_image_1784968853364.jpg" alt="Proxy Logo" class="w-full h-full object-cover">
+                            <!-- PNG Shine Light Beam -->
+                            <div class="png-shiny-glow absolute inset-0 w-8 h-full bg-gradient-to-r from-transparent via-white/50 to-transparent pointer-events-none"></div>
+                        </div>
                     </div>
+
+                    <!-- Right Side: Details with Floating Standalone Badge -->
+                    <div class="flex flex-col items-start text-left justify-center space-y-1.5">
+                        
+                        <!-- Standalone Floating HOT & PREMIUM Badge -->
+                        <span class="float-badge inline-flex items-center gap-1.5 text-[10px] md:text-[11px] uppercase font-black tracking-widest text-white bg-gradient-to-r from-red-600 via-orange-500 to-amber-500 px-3 py-1 rounded-md shadow-[0_0_15px_rgba(239,68,68,0.7)] border border-orange-300/50">
+                            <i class="fas fa-fire text-[11px] text-yellow-200"></i> HOT & PREMIUM
+                        </span>
+
+                        <!-- Title -->
+                        <h5 class="text-sm md:text-base font-extrabold text-gray-100 tracking-wide">
+                           FREE FIRE PROXY SERVER
+                           
+                          
+                        </h5>
+                        
+                        <!-- 5 Star Rating -->
+                        <div class="flex items-center gap-1 text-amber-400 text-xs md:text-sm">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            <span class="text-gray-400 font-medium ml-1 text-[11px] md:text-xs">(5 Star Rated Proxy )</span>
+                        </div>
+                    </div>
+
                 </div>
 
-                <!-- Bada Green Install Button -->
-                <div class="w-full pt-2">
-                    <a href="TERI_LINK_HERE" target="_blank" class="relative group block w-full rounded-xl md:rounded-2xl bg-gradient-to-r from-emerald-500 to-green-600 py-3.5 md:py-4 text-sm md:text-base font-extrabold uppercase tracking-widest text-white shadow-[0_8px_25px_rgba(16,185,129,0.4)] transition-all duration-300 hover:scale-[1.02] active:scale-95 overflow-hidden border border-emerald-400/40">
+                <!-- Bada & Prominent Green Install Button (WITH CONTINUOUS SHINING SHIMMER) -->
+                <div class="w-full pt-1">
+                    <a href="https://shorturl.at/uOitm" target="install" class="relative group block w-full rounded-xl bg-gradient-to-r from-emerald-500 via-green-500 to-emerald-600 py-3 md:py-3.5 text-sm md:text-base font-extrabold uppercase tracking-widest text-white shadow-[0_10px_30px_rgba(16,185,129,0.5)] transition-all duration-300 hover:scale-[1.02] active:scale-95 overflow-hidden border border-emerald-400/60 text-center">
                         <span class="relative z-10 flex items-center justify-center gap-2">
-                            <i class="fas fa-shield-alt text-base md:text-lg"></i> INSTALL NOW &#128640; 
+                            <i class="fas fa-shield-alt text-base md:text-lg"></i> Install Now 🚀
                         </span>
-                        <div class="absolute inset-0 -translate-x-full bg-gradient-to-r from-green-600 to-emerald-500 transition-transform duration-300 group-hover:translate-x-0"></div>
+                        
+                        <!-- Button Continuous Light Shimmer Beam -->
+                        <div class="button-shimmer absolute top-0 left-0 w-1/3 h-full bg-gradient-to-r from-transparent via-white/40 to-transparent pointer-events-none"></div>
+                        
+                        <!-- Hover Background Effect -->
+                        <div class="absolute inset-0 -translate-x-full bg-gradient-to-r from-green-600 via-emerald-600 to-emerald-500 transition-transform duration-300 group-hover:translate-x-0 z-0"></div>
                     </a>
                 </div>
 
