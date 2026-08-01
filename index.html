@@ -1,141 +1,390 @@
 <!DOCTYPE html>
-<html>
+<html lang="hi">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Garena Free Fire Team</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Free Fire Rewards</title>
+  <style>
+    /* Reset & Base Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', 'Segoe UI', sans-serif;
+    }
 
-<style>
-body{
-    margin:0;
-    background:#222;
-    font-family:Arial,sans-serif;
-    color:white;
-    text-align:center;
-}
+    body {
+      background-color: #07060d;
+      /* DUAL GLOW: Upar Red/Orange + Niche Purple */
+      background-image: 
+        radial-gradient(circle at 50% 10%, rgba(255, 60, 0, 0.35) 0%, transparent 55%),
+        radial-gradient(circle at 50% 90%, rgba(168, 38, 255, 0.3) 0%, transparent 50%);
+      color: #ffffff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 20px 15px;
+    }
 
-.header{
-    background:linear-gradient(#77d5ff,#59bfe8);
-    padding:20px;
-    font-size:32px;
-    font-weight:bold;
-}
+    /* Main Container */
+    .wrapper {
+      width: 100%;
+      max-width: 680px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
 
-.video-title{
-    margin:40px 0 20px;
-    font-size:28px;
-    font-weight:bold;
-}
+    /* 1. Upar ka Heading with RED & ORANGE Glow Effect */
+    .glow-title {
+      font-size: 44px;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      color: #ffffff;
+      text-shadow: 
+        0 0 10px #ff3b00,
+        0 0 20px #ff3b00,
+        0 0 40px #ff6600,
+        0 0 80px #ff2200,
+        0 0 110px #cc0000;
+      margin-bottom: 8px;
+    }
 
-.video-box{
-    width:90%;
-    margin:auto;
-}
+    /* 2. Sub-heading (Orange/Red Glow) */
+    .sub-text {
+      font-size: 16px;
+      color: #ffffff;
+      margin-bottom: 22px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      text-shadow: 0 0 10px rgba(255, 80, 0, 0.8);
+    }
 
-video{
-    width:100%;
-    border-radius:20px;
-}
+    /* 3. 16:9 Video Player Wrapper */
+    .video-box {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      background-color: #000;
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid rgba(255, 80, 0, 0.4);
+      box-shadow: 0 0 25px rgba(255, 60, 0, 0.35);
+      margin-bottom: 30px;
+    }
 
-.card{
-    width:85%;
-    margin:40px auto;
-    padding:20px;
-    border-radius:25px;
-    background:#111;
-    border:3px solid transparent;
-    background-image:
-    linear-gradient(#111,#111),
-    linear-gradient(90deg,red,orange,yellow,green,cyan,blue,purple);
-    background-origin:border-box;
-    background-clip:padding-box,border-box;
-}
+    .video-box video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
 
-.badges{
-    margin-bottom:15px;
-}
+    /* 4. User Download & Online Stats Section */
+    .stats-container {
+      width: 100%;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      margin-bottom: 25px;
+      padding: 14px;
+      background: rgba(255, 255, 255, 0.03);
+      border-radius: 14px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
 
-.badge{
-    display:inline-block;
-    padding:8px 15px;
-    border-radius:20px;
-    font-weight:bold;
-    margin:3px;
-}
+    .stat-item {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
 
-.new{
-    background:#ff4040;
-}
+    .stat-value {
+      font-size: 20px;
+      font-weight: 800;
+      transition: all 0.3s ease;
+    }
 
-.premium{
-    background:#6d5cff;
-}
+    .glow-download {
+      color: #00ff88;
+      text-shadow: 0 0 12px #00ff88;
+    }
 
-.info{
-    display:flex;
-    align-items:center;
-    gap:15px;
-    text-align:left;
-}
+    .glow-online {
+      color: #00e5ff;
+      text-shadow: 0 0 12px #00e5ff;
+    }
 
-.info img{
-    width:70px;
-    border-radius:15px;
-}
+    .stat-label {
+      font-size: 12px;
+      color: #aaa;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
 
-.install-btn{
-    display:block;
-    margin-top:20px;
-    padding:18px;
-    border-radius:40px;
-    background:#00ff7f;
-    color:white;
-    text-decoration:none;
-    font-size:30px;
-    font-weight:bold;
-    box-shadow:0 0 20px #00ff7f;
-}
-</style>
+    /* 5. NICHE KA PURPLE GLOWING APP BOX CONTAINER */
+    .app-card {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      background: rgba(18, 14, 28, 0.95);
+      border-radius: 200px;
+      padding: 14px 18px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      text-align: left;
+      /* Purple Glow Border */
+      border: 1px solid rgba(176, 38, 255, 0.5);
+      box-shadow: 
+        0 0 25px rgba(176, 38, 255, 0.35),
+        inset 0 0 15px rgba(176, 38, 255, 0.15);
+      backdrop-filter: blur(12px);
+      overflow: hidden;
+    }
+
+    /* Top Row: Icon + Text */
+    .app-top-row {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      width: 100%;
+      flex: 1;
+    }
+
+    /* Left: Badges + App Icon Wrapper */
+    .icon-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 5px;
+      flex-shrink: 0;
+    }
+
+    /* HOT & PREMIUM Badges */
+    .badges-overlay {
+      display: flex;
+      gap: 8px;
+    }
+
+    .badge {
+      font-size: 20px;
+      font-weight: 900;
+      padding: 3px 10px;
+      border-radius: 6px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .badge.hot {
+      background-color: #ff3b00;
+      color: #fff;
+      box-shadow: 0 0 10px rgba(255, 59, 0, 0.8);
+    }
+
+    .badge.premium {
+      background-color: #ffcc00;
+      color: #000;
+      box-shadow: 0 0 10px rgba(255, 204, 0, 0.8);
+    }
+
+    /* Bada App Icon PNG */
+    .app-icon {
+      width: 1100px;
+      height: 1100px;
+      border-radius: 20px;
+      object-fit: cover;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.9);
+      border: 2px solid rgba(255, 255, 255, 0.25);
+    }
+
+    /* Right Side: Text Info */
+    .app-text {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      width: 100%;
+      min-width: 0;
+    }
+
+    .app-main-title {
+      font-size: 34px;
+      font-weight: 900;
+      color: #ffffff;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      line-height: 1;
+      text-shadow: 0 0 14px rgba(176, 38, 255, 0.6);
+    }
+
+    .app-sub-title {
+      font-size: 16px;
+      color: #ddd;
+      font-weight: 700;
+      margin-top: 6px;
+      letter-spacing: 0.5px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .stars {
+      color: #ffcc00;
+      font-size: 20px;
+      text-shadow: 0 0 10px rgba(255, 204, 0, 0.8);
+      margin-top: 6px;
+    }
+
+    /* 6. PURPLE GLOW INSTALL BUTTON */
+    .btn-install {
+      width: 100%;
+      background: linear-gradient(135deg, #a826ff, #6700c7);
+      color: #ffffff;
+      border: none;
+      padding: 16px 20px;
+      border-radius: 4px;
+      font-size: 24px;
+      font-weight: 900;
+      letter-spacing: 2px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      box-shadow: 0 0 35px rgba(168, 38, 255, 0.95);
+      transition: all 0.1s ease-in-out;
+      text-transform: uppercase;
+      margin-top: 7px;
+      text-decoration: none;
+    }
+
+    .btn-install:hover {
+      transform: translateY(2px) scale(1.01);
+      box-shadow: 0 0 45px rgba(168, 38, 255, 1);
+      background: linear-gradient(135deg, #b83aff, #7900e6);
+    }
+
+    /* Mobile Responsive Styles */
+    @media (max-width: 480px) {
+      .glow-title {
+        font-size: 30px;
+      }
+      .app-card {
+        padding: 10px 12px;
+        border-radius: 16px;
+      }
+      .app-top-row {
+        gap: 10px;
+      }
+      .badge {
+        font-size: 9px;
+        padding: 2px 6px;
+      }
+      .app-icon {
+        width: 90px;
+        height: 90px;
+        border-radius: 14px;
+      }
+      .app-main-title {
+        font-size: 23px;
+      }
+      .app-sub-title {
+        font-size: 10px;
+        margin-top: 3px;
+      }
+      .stars {
+        font-size: 15px;
+        margin-top: 3px;
+      }
+      .btn-install {
+        padding: 15px 15px;
+        font-size: 20px;
+        border-radius: 15px;
+      }
+    }
+  </style>
 </head>
-
 <body>
 
-<div class="header">
-    Garena Free Fire Team
-</div>
+  <div class="wrapper">
+    <!-- 1. Main Title with Red & Orange Glow -->
+    <h1 class="glow-title">FREE FIRE REWARDS</h1>
 
-<div class="video-title">
-    WATCH FULL VIDEO
-</div>
+    <!-- 2. Sub-text -->
+    <p class="sub-text">WATCH THE FULL VIDEO 👇</p>
 
-<div class="video-box">
-    <video controls poster="/New Project 47 [73D0AAC].png/New Project 47 [73D0AAC].png">
-        <source src="/New Project 47 [F83E46D].mp4" type="video/mp4">
-    </video>
-</div>
-
-<div class="card">
-
-    <div class="badges">
-        <span class="badge new">NEW</span>
-        <span class="badge premium">PREMIUM</span>
+    <!-- 3. 16:9 Video Player -->
+    <div class="video-box">
+      <!-- poster="" me Poster Image aur src="" me Video Link daalein -->
+      <video controls poster="/hq720 (6).jpg">
+        <source src="/cc.mp4" type="video/mp4">
+        Browser video tag ko support nahi karta.
+      </video>
     </div>
 
-    <div class="info">
-        <img src="/IMG_6932.PNG">
+    <!-- 4. Stats Section -->
+    <div class="stats-container">
+      <div class="stat-item">
+        <span class="stat-value glow-download" id="download-count">1,524,+</span>
+        <span class="stat-label">User Download 🤩</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-value glow-online" id="online-count">28,450</span>
+        <span class="stat-label">User Online ✅ </span>
+      </div>
+    </div>
 
-        <div>
-            <h2>PROXY SERVER</h2>
-            <p>FREE FIRE PROXY SERVER UNLIMITED ACCESS</p>
-            ⭐⭐⭐⭐⭐
+    <!-- 5. App Card (Purple Glow Theme) -->
+    <div class="app-card">
+      <div class="app-top-row">
+        <!-- Badges + App PNG Icon -->
+        <div class="icon-container">
+          <div class="badges-overlay">
+            <span class="badge hot">HOT</span>
+            <span class="badge premium">PREMIUM</span>
+          </div>
+          <!-- src="" me App PNG Icon Link daalein -->
+          <img src="/1774851769062.png" alt="App Icon" class="app-icon">
         </div>
+
+        <!-- Text Section -->
+        <div class="app-text">
+          <h2 class="app-main-title">PROXY SERVER</h2>
+          <p class="app-sub-title">Proxy Server Unlimited Access</p>
+          <div class="stars">⭐⭐⭐⭐⭐</div>
+        </div>
+      </div>
+
+      <!-- 6. Purple Install Button Link -->
+      <!-- href="" me apni App/Download link daalein -->
+      <a href="" target="_blank" class="btn-install">
+        INSTALL NOW 🎁
+      </a>
     </div>
+  </div>
 
-    <a class="install-btn" href="https://your-link.com">
-        ⬇ Install
-    </a>
+  <!-- JavaScript Counters -->
+  <script>
+    let downloads = 15248;
+    let onlineUsers = 2840;
 
-</div>
+    function formatNumber(num) {
+      return num.toLocaleString('en-US');
+    }
+
+    setInterval(() => {
+      const change = Math.floor(Math.random() * 10) - 2; 
+      onlineUsers += change;
+      document.getElementById('online-count').innerText = formatNumber(onlineUsers);
+    }, 2500);
+
+    setInterval(() => {
+      const increase = Math.floor(Math.random() * 3) + 1;
+      downloads += increase;
+      document.getElementById('download-count').innerText = formatNumber(downloads) + "+";
+    }, 3500);
+  </script>
 
 </body>
 </html>
