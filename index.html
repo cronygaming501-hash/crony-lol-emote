@@ -12,111 +12,143 @@
         @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
         body {
             font-family: 'Plus Jakarta Sans', sans-serif;
-            background: radial-gradient(circle at center, #1e2029 0%, #0f1015 100%);
+            background: radial-gradient(circle at center, #1b1328 0%, #09070f 100%);
         }
     </style>
 </head>
-<body class="flex flex-col items-center justify-start min-h-screen text-white px-4 pt-6 md:pt-10 pb-12 overflow-x-hidden">
+<body class="relative flex flex-col items-center justify-start min-h-screen text-white px-4 pt-6 md:pt-10 pb-12 overflow-x-hidden">
 
-    <!-- Top Heading Section -->
-    <div class="text-center mb-5 w-full max-w-3xl">
-        <h1 class="text-3xl md:text-5xl font-extrabold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-amber-500 via-orange-500 to-red-500 drop-shadow-sm uppercase">
-            Free Fire REWARDS
-        </h1>
-        <p class="text-gray-400 text-xs md:text-sm font-semibold tracking-widest mt-1.5 uppercase flex items-center justify-center gap-2">
-            <span class="inline-block w-2 h-2 rounded-full bg-orange-500 animate-pulse"></span>
-            Watch The Full Video
-        </p>
-    </div>
+    <!-- Ambient Purple Background Glow Effects -->
+    <div class="absolute top-10 left-1/2 -translate-x-1/2 w-[500px] h-[500px] bg-purple-600/15 rounded-full blur-[140px] pointer-events-none z-0"></div>
+    <div class="absolute bottom-10 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-indigo-600/15 rounded-full blur-[160px] pointer-events-none z-0"></div>
 
-    <!-- Main Container (16:9 Curve Design) -->
-    <div class="relative w-full max-w-3xl aspect-[16/9] rounded-2xl md:rounded-3xl overflow-hidden shadow-[0_25px_60px_-15px_rgba(0,0,0,0.9)] border border-gray-800/60 bg-[#15171e] p-[3px]">
-        
-        <!-- Professional Soft Back-Glow -->
-        <div class="absolute inset-0 bg-gradient-to-tr from-orange-500/10 via-transparent to-amber-500/5 pointer-events-none z-0"></div>
+    <!-- Main Wrapper Content -->
+    <div class="relative z-10 w-full max-w-3xl flex flex-col items-center">
 
-        <!-- The Video Player -->
-        <div class="relative w-full h-full z-10 rounded-[13px] md:rounded-[21px] overflow-hidden bg-black shadow-inner">
-            <!-- Replace 'YOUR_VIDEO_URL_HERE' with your actual video link -->
-            <video class="w-full h-full object-cover" controls poster="https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=1000&auto=format&fit=crop">
-                <source src="YOUR_VIDEO_URL_HERE" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-        </div>
-    </div>
-
-    <!-- Live Stats Section -->
-    <div class="w-full max-w-3xl mt-8 md:mt-12 grid grid-cols-1 sm:grid-cols-2 gap-4 px-2">
-        
-        <!-- Stat 1: Members Online -->
-        <div class="bg-[#14161d]/40 border border-emerald-500/20 rounded-xl p-4 flex flex-col items-center justify-center text-center shadow-[0_0_15px_rgba(16,185,129,0.05)]">
-            <span class="text-xs font-semibold uppercase tracking-wider text-emerald-400 flex items-center gap-1.5 drop-shadow-[0_0_8px_rgba(52,211,153,0.3)]">
-                <span class="inline-block w-2 h-2 rounded-full bg-emerald-500 animate-ping"></span>
-                Live Members
-            </span>
-            <span class="text-2xl font-extrabold text-white mt-1 drop-shadow-[0_2px_10px_rgba(255,255,255,0.1)]">
-                14,832
-            </span>
-            <span class="text-[10px] text-gray-500 mt-0.5">Connected Right Now</span>
+        <!-- Top Heading Section -->
+        <div class="text-center mb-6 w-full">
+            <h1 class="text-3xl md:text-5xl font-extrabold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-500 to-amber-500 drop-shadow-[0_0_15px_rgba(168,85,247,0.3)] uppercase">
+                Free Fire REWARDS
+            </h1>
+            <p class="text-gray-400 text-xs md:text-sm font-semibold tracking-widest mt-2 uppercase flex items-center justify-center gap-2">
+                <span class="inline-block w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                Watch The Full Video
+            </p>
         </div>
 
-        <!-- Stat 2: Total Downloads -->
-        <div class="bg-[#14161d]/40 border border-orange-500/20 rounded-xl p-4 flex flex-col items-center justify-center text-center shadow-[0_0_15px_rgba(249,115,22,0.05)]">
-            <span class="text-xs font-semibold uppercase tracking-wider text-orange-400 flex items-center gap-1.5 drop-shadow-[0_0_8px_rgba(251,146,60,0.3)]">
-                <i class="fas fa-cloud-download-alt"></i> Total Downloads
-            </span>
-            <span class="text-2xl font-extrabold text-white mt-1 drop-shadow-[0_2px_10px_rgba(255,255,255,0.1)]">
-                245,910+
-            </span>
-            <span class="text-[10px] text-gray-500 mt-0.5">Verified Installations</span>
-        </div>
+        <!-- Main Video Container -->
+        <div class="relative w-full aspect-[16/9] rounded-2xl md:rounded-3xl overflow-hidden shadow-[0_25px_60px_-15px_rgba(0,0,0,0.9)] border border-purple-500/20 bg-[#120e1a] p-[3px]">
+            
+            <!-- Soft Purple Back-Glow -->
+            <div class="absolute inset-0 bg-gradient-to-tr from-purple-600/20 via-transparent to-pink-500/10 pointer-events-none z-0"></div>
 
-    </div>
-
-    <!-- Bottom Premium Section -->
-    <div class="w-full max-w-3xl mt-8 md:mt-12 flex flex-col sm:flex-row items-center justify-between gap-4 bg-[#14161d]/90 border border-gray-800/80 p-4 rounded-2xl backdrop-blur-md shadow-xl">
-        
-        <!-- Left Part: 1:1 Logo + Professional Text + Stars -->
-        <div class="flex items-center gap-4 w-full sm:w-auto">
-            <!-- 1:1 Premium Logo -->
-            <div class="relative w-14 h-14 rounded-xl overflow-hidden flex-shrink-0 bg-gradient-to-b from-gray-700 to-gray-900 p-[1px] shadow-md">
-                <div class="w-full h-full bg-[#1c1e27] rounded-[11px] flex items-center justify-center overflow-hidden">
-                    <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=150&auto=format&fit=crop" alt="Proxy Logo" class="w-full h-full object-cover">
-                </div>
-            </div>
-
-            <!-- Text & Rating -->
-            <div class="flex flex-col">
-                <div class="flex items-center gap-2">
-                    <span class="text-[10px] uppercase font-bold tracking-wider text-amber-500 bg-amber-500/10 px-2 py-0.5 rounded-md border border-amber-500/20">Verified Tool</span>
-                </div>
-                <h3 class="text-base md:text-lg font-bold text-gray-100 tracking-wide leading-tight mt-1">
-                    Free Fire Premium Proxy
-                </h3>
-                <!-- 5 Star Rating -->
-                <div class="flex items-center gap-1 mt-1 text-amber-400 text-xs">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <span class="text-gray-400 font-medium ml-1.5 text-[11px]">5.0 (Secure Client)</span>
-                </div>
+            <!-- The Video Player -->
+            <div class="relative w-full h-full z-10 rounded-[13px] md:rounded-[21px] overflow-hidden bg-black shadow-inner">
+                <video class="w-full h-full object-cover" controls poster="/hq720 (6).jpg">
+                    <source src="/cc.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
             </div>
         </div>
 
-        <!-- Right Part: Premium Install Link Button -->
-        <div class="w-full sm:w-auto flex-shrink-0">
-            <!-- APNI LINK YAHAN DALO: 'TERI_LINK_HERE' ko badal kar apni file ya web link daal dena -->
-            <a href="TERI_LINK_HERE" target="_blank" class="relative group block text-center rounded-xl bg-gradient-to-r from-amber-500 to-orange-600 px-8 py-3 text-xs md:text-sm font-bold uppercase tracking-wider text-white shadow-[0_6px_20px_rgba(245,158,11,0.3)] transition-all duration-300 hover:scale-[1.02] active:scale-95 overflow-hidden">
-                <span class="relative z-10 flex items-center justify-center gap-2">
-                    <i class="fas fa-shield-alt"></i> Install Securely
+        <!-- Live Stats Section -->
+        <div class="w-full mt-6 grid grid-cols-1 sm:grid-cols-2 gap-4 px-1">
+            
+            <!-- Stat 1: Members Online -->
+            <div class="bg-[#181124]/80 border border-purple-500/30 rounded-xl py-3.5 px-5 flex items-center justify-between shadow-[0_0_20px_rgba(168,85,247,0.1)] backdrop-blur-md">
+                <span class="text-xs md:text-sm font-bold uppercase tracking-wider text-emerald-400 flex items-center gap-2">
+                    <span class="inline-block w-2.5 h-2.5 rounded-full bg-emerald-500 animate-ping"></span>
+                    Live Members
                 </span>
-                <div class="absolute inset-0 -translate-x-full bg-gradient-to-r from-orange-600 to-amber-500 transition-transform duration-300 group-hover:translate-x-0"></div>
-            </a>
+                <span id="live-members" class="text-lg md:text-xl font-extrabold text-white transition-all duration-300">
+                    48,215
+                </span>
+            </div>
+
+            <!-- Stat 2: Total Downloads -->
+            <div class="bg-[#181124]/80 border border-purple-500/30 rounded-xl py-3.5 px-5 flex items-center justify-between shadow-[0_0_20px_rgba(168,85,247,0.1)] backdrop-blur-md">
+                <span class="text-xs md:text-sm font-bold uppercase tracking-wider text-purple-300 flex items-center gap-2">
+                    <i class="fas fa-cloud-download-alt text-xs text-purple-400"></i> Downloads
+                </span>
+                <span id="total-downloads" class="text-lg md:text-xl font-extrabold text-white transition-all duration-300">
+                    425,910+
+                </span>
+            </div>
+
+        </div>
+
+        <!-- Bottom Premium Card (BADA & PROMINENT LOGO + BUTTON SAFELY INSIDE BOX) -->
+        <div class="relative w-full rounded-2xl md:rounded-3xl overflow-hidden shadow-[0_25px_60px_-15px_rgba(0,0,0,0.9)] border border-purple-500/25 bg-[#181124]/90 p-6 md:p-8 mt-8 flex flex-col items-center justify-center text-center backdrop-blur-md">
+            
+            <!-- Soft Ambient Purple Back-Glow -->
+            <div class="absolute inset-0 bg-gradient-to-tr from-purple-600/10 via-transparent to-pink-500/10 pointer-events-none z-0"></div>
+
+            <div class="relative z-10 flex flex-col items-center justify-center w-full max-w-md space-y-4">
+                
+                <!-- Bada PNG Logo -->
+                <div class="relative aspect-square w-16 md:w-20 rounded-2xl overflow-hidden flex-shrink-0 bg-gradient-to-b from-purple-500 to-indigo-900 p-[1.5px] shadow-[0_0_20px_rgba(168,85,247,0.3)]">
+                    <div class="w-full h-full bg-[#1c122c] rounded-[14px] flex items-center justify-center overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=150&auto=format&fit=crop" alt="Proxy Logo" class="w-full h-full object-cover">
+                    </div>
+                </div>
+
+                <!-- Text & Rating -->
+                <div class="flex flex-col items-center">
+                    <!-- HOT & PREMIUM Tag -->
+                    <span class="text-xs uppercase font-black tracking-wider text-white bg-gradient-to-r from-red-600 to-orange-500 px-3 py-1 rounded-md shadow-[0_0_10px_rgba(239,68,68,0.5)] flex items-center gap-1 border border-orange-400/30">
+                        <i class="fas fa-fire text-xs animate-bounce"></i> HOT & PREMIUM
+                    </span>
+
+                    <h3 class="text-xl md:text-2xl font-extrabold text-gray-100 tracking-wide mt-2">
+                        Free Fire Premium Proxy
+                    </h3>
+                    
+                    <!-- 5 Star Rating -->
+                    <div class="flex items-center gap-1 mt-1 text-amber-400 text-sm">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <span class="text-gray-400 font-medium ml-1.5 text-xs">(5.0 Secure Client)</span>
+                    </div>
+                </div>
+
+                <!-- Bada Green Install Button -->
+                <div class="w-full pt-2">
+                    <a href="TERI_LINK_HERE" target="_blank" class="relative group block w-full rounded-xl md:rounded-2xl bg-gradient-to-r from-emerald-500 to-green-600 py-3.5 md:py-4 text-sm md:text-base font-extrabold uppercase tracking-widest text-white shadow-[0_8px_25px_rgba(16,185,129,0.4)] transition-all duration-300 hover:scale-[1.02] active:scale-95 overflow-hidden border border-emerald-400/40">
+                        <span class="relative z-10 flex items-center justify-center gap-2">
+                            <i class="fas fa-shield-alt text-base md:text-lg"></i> Install Securely
+                        </span>
+                        <div class="absolute inset-0 -translate-x-full bg-gradient-to-r from-green-600 to-emerald-500 transition-transform duration-300 group-hover:translate-x-0"></div>
+                    </a>
+                </div>
+
+            </div>
+
         </div>
 
     </div>
+
+    <!-- Live Counter Script -->
+    <script>
+        let baseMembers = 48215;
+        let baseDownloads = 425910;
+
+        function updateCounters() {
+            let memberDiff = Math.floor(Math.random() * 21) - 8;
+            baseMembers += memberDiff;
+
+            if (Math.random() > 0.4) {
+                baseDownloads += Math.floor(Math.random() * 3) + 1;
+            }
+
+            document.getElementById('live-members').innerText = baseMembers.toLocaleString();
+            document.getElementById('total-downloads').innerText = baseDownloads.toLocaleString() + '+';
+        }
+
+        setInterval(updateCounters, 2500);
+    </script>
 
 </body>
 </html>
